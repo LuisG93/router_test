@@ -1,10 +1,10 @@
 # Ssh update
 
-This api has an endpoint for update an interface in one or more routers.
+This API has two endpoints for updating and viewing information on a router.
 
 ## Setup
 
-Clonar repositorio
+Clone repository.
 
 ```bash
 git clone https://github.com/LuisG93/router_test.git
@@ -30,7 +30,7 @@ pip install -r requirements.txt
 flask run
 ```
 
-## Using the endpoint
+## update_router endpoint
 
 You can enter to the endpoint <http://localhost:5000/update_router/> using post method. You need to pass the following arguments:
 
@@ -41,3 +41,15 @@ You can enter to the endpoint <http://localhost:5000/update_router/> using post 
   - password: A string with the ssh password
   - interface: A string with the name of the interface to update
 - bandwidh: A integer with the new bandwith for all the routers(Kbps)
+
+## get_router endpoint
+
+You can enter to the endpoint <http://localhost:5000/get_router/> using post method. You need to pass the following arguments:
+
+- routers: This param is a list of diccionaries. Each of them contain the information about a router and must contain this fields:
+  - ip: A string with the ip for the router
+  - port: A integer with the port number
+  - user: A string with the ssh username
+  - password: A string with the ssh password
+  - interface: A string with the name of the interface to update
+- info: An array of strings. You can send "bandwidth" and "address".
