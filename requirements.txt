@@ -1,0 +1,4 @@
+Flask
+paramiko
+cerberus
+python-dotenv
